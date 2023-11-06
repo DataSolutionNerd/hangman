@@ -10,3 +10,7 @@ print(word_list)
 # Task 2
 word = rd.choice(word_list)
 print(word) 
+
+# Task 3
+print("Please enter a single letter input: ")
+guess = input()

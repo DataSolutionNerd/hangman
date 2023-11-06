@@ -1,3 +1,4 @@
+# import libraries
 import random
 
 # Task 1: Iteratively check if input is valid
@@ -12,12 +13,7 @@ while True:
         continue
 
 
-
-
-
 # Task 2: check weather the guess is in the word
-
-import random
 
 secret_word = ("apple", "spoon", "easy", "sown", "help")
 random_word = random.choice(secret_word)

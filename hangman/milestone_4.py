@@ -16,8 +16,21 @@ class Hangman:
     def check_guess(self, guess):
         if guess.lower() in list(self.word):
             print("Good guess! {guess} is in the word.")
+            for x  in list(self.word):
+                position = 0
+                if x.lower == guess.lower():
+                    self.word_guessed[position].replace("_", guess)
+                    position = position+1
+                else:
+                    continue
         else:
             print("Oh no! {guess} is not in the word.")
+
+        self.num_letters = self.num_letters- 1
+
+
+
+
 
 
     def ask_for_input(self):
@@ -30,6 +43,7 @@ class Hangman:
             else:
                 mileston_four.check_guess(guess)
                 self.list_of_guesses.append(guess)
+                
 
 # Test Code 
 secret_word = ("apple", "spoon", "easy", "sown", "help")

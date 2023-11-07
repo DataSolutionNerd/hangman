@@ -16,16 +16,17 @@ class Hangman:
     def check_guess(self, guess):
         if guess.lower() in list(self.word):
             print("Good guess! {guess} is in the word.")
+            position = 0
             for x  in list(self.word):
-                position = 0
                 if x.lower == guess.lower():
-                    self.word_guessed[position].replace("_", guess)
-                    position = position+1
+                    self.word_guessed[position] == guess
+                    position = position+1      
                 else:
-                    continue
+                    position = position+1       
         else:
-            print("Oh no! {guess} is not in the word.")
-
+            self.num_lives = self.num_lives - 1
+            print("Sorry, {letter} is not in the word.")
+            print("You have {self.num_lives} lives left.")   
         self.num_letters = self.num_letters- 1
 
 
@@ -43,10 +44,10 @@ class Hangman:
             else:
                 mileston_four.check_guess(guess)
                 self.list_of_guesses.append(guess)
-                
+
 
 # Test Code 
-secret_word = ("apple", "spoon", "easy", "sown", "help")
+secret_word = ["apple", "spoon", "easy", "sown", "help"]
 mileston_four = Hangman(secret_word)
 mileston_four.ask_for_input()
   

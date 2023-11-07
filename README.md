@@ -22,6 +22,7 @@ Three python files included:
 - hangman_Template.py
 - milestone_2.py
 - milestone_3.py
+- milestone_4.py
 
 ## License information
 

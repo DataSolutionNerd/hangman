@@ -13,4 +13,31 @@ class Hangman:
         self.list_of_guesses = list()
         
 
+    def check_guess(self, guess):
+        if guess.lower() in list(self.word):
+            print("Good guess! {guess} is in the word.")
+        else:
+            print("Oh no! {guess} is not in the word.")
+
+
+    def ask_for_input(self):
+        while True:
+            guess = input("Guess a letter: ")
+            if len(guess) != 1 or guess.isalpha() == False:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                mileston_four.check_guess(guess)
+                self.list_of_guesses.append(guess)
+
+# Test Code 
+secret_word = ("apple", "spoon", "easy", "sown", "help")
+mileston_four = Hangman(secret_word)
+mileston_four.ask_for_input()
+  
+
+
+
+
 
